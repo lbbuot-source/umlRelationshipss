@@ -1,0 +1,21 @@
+class Song:
+    def __init__(self, title):
+        self.title = title
+
+class Playlist:
+    def __init__(self, name, songs):
+        self.name = name
+        self.songs = songs  # Playlist holds external Song objects (Aggregation)
+
+    def show_playlist(self):
+        print(f"Playlist '{self.name}':")
+        for song in self.songs:
+            print(f"- {song.title}")
+
+if __name__ == "__main__":
+    # Songs are created independently outside the Playlist
+    song1 = Song("Always")
+    song2 = Song("Cherry Flavored Love Inside Your Heart")
+
+    roadtrip = Playlist("ilovemonkeys", [song1, song2])
+    ilovemonkeys.show_playlist()
