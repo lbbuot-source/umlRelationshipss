@@ -1,0 +1,14 @@
+from abc import ABC, abstractmethod
+
+class Notifier(ABC):  # Interface
+    @abstractmethod
+    def send(self, message):
+        pass
+
+class EmailNotifier(Notifier):  # Realizes the interface
+    def send(self, message):
+        print(f"Sent Email: '{message}'")
+
+if __name__ == "__main__":
+    notifier = EmailNotifier()
+    notifier.send("Your order has shipped!")
