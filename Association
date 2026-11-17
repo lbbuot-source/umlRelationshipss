@@ -1,0 +1,25 @@
+class Patient:
+    def __init__(self, name):
+        self.name = name
+
+class Doctor:
+    def __init__(self, name):
+        self.name = name
+        self.patients = []  # Doctor keeps track of associated Patients
+
+    def add_patient(self, patient):
+        self.patients.append(patient)
+
+    def show_patients(self):
+        print(f"Dr. {self.name}'s patients:")
+        for patient in self.patients:
+            print(f"- {patient.name}")
+
+if __name__ == "__main__":
+    patient1 = Patient("Alice")
+    patient2 = Patient("Bob")
+    doctor = Doctor("Smith")
+
+    doctor.add_patient(patient1)
+    doctor.add_patient(patient2)
+    doctor.show_patients()
