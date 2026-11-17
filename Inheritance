@@ -1,0 +1,15 @@
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def eat(self):
+        print(f"{self.name} is eating.")
+
+class Dog(Animal):  # Dog inherits from Animal
+    def bark(self):
+        print(f"{self.name} says: Woof woof!")
+
+if __name__ == "__main__":
+    puppy = Dog("Buddy")
+    puppy.eat()   # Inherited method
+    puppy.bark()  # Subclass method
