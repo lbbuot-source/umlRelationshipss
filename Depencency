@@ -1,0 +1,14 @@
+class Recipe:
+    def __init__(self, dish_name, cook_time):
+        self.dish_name = dish_name
+        self.cook_time = cook_time
+
+class Chef:
+    def cook(self, recipe):  # Chef depends on a Recipe object to cook
+        print(f"Preparing {recipe.dish_name}...")
+        print(f"Done in {recipe.cook_time} minutes!")
+
+if __name__ == "__main__":
+    pasta_recipe = Recipe("Garlic Butter Pasta", 15)
+    chef = Chef()
+    chef.cook(pasta_recipe)  # Passing the dependency into the method
